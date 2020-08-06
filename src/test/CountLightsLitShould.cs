@@ -3,19 +3,19 @@ using Xunit;
 
 namespace ChristmasLightsKataTest
 {
-    public class CountLightsLitShould
+    public class CountLightsBrightnessShould
     {
         private const int EXPECTED_LIGHT_BRIGHTNESS = 1000000 + 2000 - 4;
 
         [Fact]
-        public void It_should_get_the_number_of_lights_lit()
+        public void It_should_get_the_lights_brightness()
         {
-            var expectedLightLit = EXPECTED_LIGHT_BRIGHTNESS;
+            var expectedLightBrightness = EXPECTED_LIGHT_BRIGHTNESS;
 
-            var countLightsLit = new LightsLitCounter();
-            var lightLit = countLightsLit.Execute();
+            var lightsBrightnessCounter = new LightsBrightnessCounter();
+            var brightness = lightsBrightnessCounter.Execute();
 
-            Assert.True(expectedLightLit == lightLit);
+            Assert.True(expectedLightBrightness == brightness);
         }
 
     }

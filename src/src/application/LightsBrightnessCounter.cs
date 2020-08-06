@@ -2,12 +2,12 @@
 
 namespace ChristmasLightsKata.src.application
 {
-    public class LightsLitCounter
+    public class LightsBrightnessCounter
     {
         public int Execute()
         {
             var lightGrid = new LightGrid();
-            return lightGrid.CountLightLit();
+            return lightGrid.CountLightsBrightness();
         }
     }
 }

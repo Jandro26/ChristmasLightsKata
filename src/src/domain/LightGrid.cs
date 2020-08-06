@@ -4,7 +4,9 @@ namespace ChristmasLightsKata.src.domain
 {
     public class LightGrid
     {
-        private int[,] lightGrid = new int[1000,1000];
+        private const int ROW_SIZE = 1000;
+        private const int COLUMN_SIZE = 1000;        
+        private int[,] lightGrid = new int[ROW_SIZE, COLUMN_SIZE];
 
         public LightGrid()
         {
@@ -13,11 +15,11 @@ namespace ChristmasLightsKata.src.domain
             TurnOnSantaThirdStep();
         }
 
-        public int CountLightLit()
+        public int CountLightsBrightness()
         {
             var count = 0;
-            for (int i = 0; i <= 999; i++)
-                for (int j = 0; j <= 999; j++)
+            for (int i = 0; i <= ROW_SIZE-1; i++)
+                for (int j = 0; j <= COLUMN_SIZE-1; j++)
                     count += lightGrid[i, j];
 
             return count;
@@ -25,14 +27,14 @@ namespace ChristmasLightsKata.src.domain
 
         private void TurnOnSantaFirstStep()
         {
-            for (int i = 0; i <= 999; i++)
-                for (int j = 0; j <= 999; j++)
+            for (int i = 0; i <= ROW_SIZE-1; i++)
+                for (int j = 0; j <= COLUMN_SIZE-1; j++)
                     lightGrid[i, j] ++ ;
         }
 
         private void TurnOnSantaSecondStep()
         {
-            for (int k = 0; k <= 999; k++)
+            for (int k = 0; k <= COLUMN_SIZE-1; k++)
                 lightGrid[0, k] += 2;
         }
 
