@@ -8,16 +8,9 @@ namespace ChristmasLightsKata.src.domain
 
         public LightGrid()
         {
-            for (int i = 0; i <= 999; i++)
-                for (int j = 0; j <= 999; j++)
-                    lightGrid[i, j] = true;
-
-            for (int k = 0; k <= 999; k++)
-                lightGrid[0, k] = !lightGrid[0, k];
-
-            for (int i = 499; i <= 500; i++)
-                for (int j = 499; j <= 500; j++)
-                    lightGrid[i, j] = false;
+            TurnOnSantaFirstStep();
+            TurnOnSantaSecondStep();
+            TurnOnSantaThirdStep();
         }
 
         public int CountLightLit()
@@ -29,6 +22,26 @@ namespace ChristmasLightsKata.src.domain
                         count++;
 
             return count;
+        }
+
+        private void TurnOnSantaFirstStep()
+        {
+            for (int i = 0; i <= 999; i++)
+                for (int j = 0; j <= 999; j++)
+                    lightGrid[i, j] = true;
+        }
+
+        private void TurnOnSantaSecondStep()
+        {
+            for (int k = 0; k <= 999; k++)
+                lightGrid[0, k] = !lightGrid[0, k];
+        }
+
+        private void TurnOnSantaThirdStep()
+        {
+            for (int i = 499; i <= 500; i++)
+                for (int j = 499; j <= 500; j++)
+                    lightGrid[i, j] = false;
         }
 
     }
