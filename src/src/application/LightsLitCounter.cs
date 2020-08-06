@@ -2,7 +2,7 @@
 
 namespace ChristmasLightsKata.src.application
 {
-    public class CountLightsLit
+    public class LightsLitCounter
     {
         public int Execute()
         {
