@@ -4,47 +4,35 @@ namespace ChristmasLightsKata.src.domain
 {
     public class LightGrid
     {
-        private const int ROW_SIZE = 1000;
-        private const int COLUMN_SIZE = 1000;        
-        private int[,] lightGrid = new int[ROW_SIZE, COLUMN_SIZE];
+        public const int ROWS_NUMBER = 1000;
+        public const int COLUMNS_NUMBER = 1000;        
+        private int[,] lightGrid = new int[ROWS_NUMBER, COLUMNS_NUMBER];
 
-        public LightGrid()
+        public void TurnOn(int row, int column)
+        => lightGrid[row, column]++;
+
+        public void TurnOff(int row, int column)
         {
-            TurnOnSantaFirstStep();
-            TurnOnSantaSecondStep();
-            TurnOnSantaThirdStep();
+            if (lightGrid[row, column] > 0) lightGrid[row, column]--;
         }
+
+        public void Toggle(int row, int column)
+        => lightGrid[row, column] += 2;
+
+        public int GetRowsNumber()
+        => ROWS_NUMBER;
+
+        public int GetColumnsNumber()
+        => COLUMNS_NUMBER;
 
         public int CountLightsBrightness()
         {
             var count = 0;
-            for (int i = 0; i <= ROW_SIZE-1; i++)
-                for (int j = 0; j <= COLUMN_SIZE-1; j++)
+            for (int i = 0; i <= ROWS_NUMBER - 1; i++)
+                for (int j = 0; j <= COLUMNS_NUMBER - 1; j++)
                     count += lightGrid[i, j];
 
             return count;
         }
-
-        private void TurnOnSantaFirstStep()
-        {
-            for (int i = 0; i <= ROW_SIZE-1; i++)
-                for (int j = 0; j <= COLUMN_SIZE-1; j++)
-                    lightGrid[i, j] ++ ;
-        }
-
-        private void TurnOnSantaSecondStep()
-        {
-            for (int k = 0; k <= COLUMN_SIZE-1; k++)
-                lightGrid[0, k] += 2;
-        }
-
-        private void TurnOnSantaThirdStep()
-        {
-            for (int i = 499; i <= 500; i++)
-                for (int j = 499; j <= 500; j++)
-                    if(lightGrid[i, j] > 0)
-                        lightGrid[i, j] --;
-        }
-
     }
 }
