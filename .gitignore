@@ -3,3 +3,8 @@
 ################################################################################
 
 /src/bin/Debug/netcoreapp3.1
+/src/obj
+/test/ChristmasLightsKataTest/bin/Debug/netcoreapp3.1
+/test/ChristmasLightsKataTest/obj/Debug/netcoreapp3.1
+/test/ChristmasLightsKataTest/obj
+/.vs/ChristmasLightsKata
